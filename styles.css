@@ -1,0 +1,374 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Kumbh Sans', sans-serif;
+    font-size: 16px;
+    overflow-x: hidden;
+}
+
+button {
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+}
+
+.container {
+    max-width: 1112px;
+    margin: 0 auto;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+}
+
+/* HEADER STYLES */
+#primary_nav {
+    cursor: pointer;
+    border-bottom: 1px solid hsl(220, 14%, 75%);
+    min-height: 100px;
+    align-items: center;
+}
+
+.logo {
+    margin-right: 3.5rem;
+}
+
+.menu-toggler {
+    display: none;
+    aspect-ratio: 1 / 1;
+    height: 1.2rem;
+    background-image: url('images/icon-menu.svg');
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: 9999;
+}
+
+.menu-toggler[aria-expanded="true"] {
+    background-image: url('images/icon-close.svg');
+    filter: invert(60%);
+}
+
+.menu-list {
+    list-style: none;
+    align-self: stretch;
+    gap: 2rem;
+}
+
+.menu-item {
+    text-decoration: none;
+    padding-top: 40px;
+    background-size: 0px 3px !important;
+    background-position: 50% 100% !important;
+    background-repeat: no-repeat !important;
+    background: linear-gradient(to right, hsl(26, 100%, 55%), hsl(26, 100%, 55%));
+    transition: background-size .2s ease;
+}
+
+
+.menu-item > a {
+    text-decoration: none;
+    color: hsl(219, 9%, 45%);
+}
+
+.account {
+    position: relative;
+    margin-left: auto;
+    align-items: center;
+}
+
+#cart_btn {
+    position: relative;
+}
+
+.cart {
+    display: none;
+    position: absolute;
+    height: 260px;
+    width: 360px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    top: 110%;
+    right: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 30px 30px -15px #c6c6c6;
+    z-index: 100;
+}
+
+.cart.show {
+    display: block;
+}
+
+.cart-title {
+    padding-bottom: 20px;
+    border-bottom: 1px solid hsl(220, 14%, 75%);
+}
+
+.cart-content > p {
+    text-align: center;
+    line-height: 190px;
+    color: hsl(219, 9%, 45%);
+    font-weight: 700;
+}
+
+.item {
+    height: 50px;
+    margin: 25px 0;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.item > img {
+    width: 50px;
+    border-radius: 6px;
+}
+
+.item h4, .item p {
+    color: hsl(219, 9%, 45%);
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+.items-count {
+    display: none;
+    color: #fff;
+    position: absolute;
+    height: 17px;
+    width: 20px;
+    border-radius: 40%;
+    background-color: hsl(26, 100%, 55%);
+    top: -10px;
+    right: -10px;
+}
+
+.profile-img {
+    width: 50px;
+    border-radius: 50%;
+    margin-left: 2rem;
+    transition: box-shadow .2s ease;
+}
+
+/* INTRO SECTION STYLES */
+#product_section {
+    padding: 80px 0;
+}
+
+.product-block {
+    align-items: center;
+    justify-content: space-around;
+}
+
+#preview_1 {
+    width: 440px;
+    border-radius: 10px;
+    cursor: zoom-in;
+}
+
+.thumbnails {
+    margin-top: 20px;
+    justify-content: space-between;
+}
+
+.thumbnail-btn {
+    width: 90px;
+    cursor: pointer;
+    position: relative;
+}
+
+.thumbnail-btn > img {
+    border-radius: 10px;
+    height: 100%;
+    width: 100%;
+}
+
+.thumbnail-btn.active::after {
+    position: absolute;
+    content: '';
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 0 2px hsl(26, 100%, 55%);
+}
+
+.carousel {
+    display: none;
+    width: 100%;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.carousel-track {
+    position: relative;
+    display: flex;
+    transition: all .3s ease-out;
+}
+
+.carousel-slide {
+    aspect-ratio: 3 / 2.4;
+    object-fit: cover;
+}
+
+
+.product-info {
+    max-width: 450px;
+}
+
+.sup-title {
+    display: inline-block;
+    color: hsl(26, 100%, 55%);
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 0.8em;
+    margin: 20px 0;
+}
+
+.title {
+    font-size: 3rem;
+    color: hsl(220, 13%, 13%);
+}
+
+.text {
+    color: hsl(219, 9%, 45%);
+    line-height: 1.6;
+    margin: 40px 0 30px;
+}
+
+.prices {
+    flex-direction: column;
+    gap: 1em;
+}
+
+.prices s {
+    color: hsl(220, 14%, 75%);
+    font-weight: 700;
+}
+
+.price-text {
+    font-size: 1.5rem;
+}
+
+.discount-text {
+    color: hsl(26, 100%, 55%);
+    background-color: hsl(25, 100%, 94%);
+    padding: 0.25em 0.5em;
+    border-radius: 20%;
+    font-weight: 700;
+    font-size: 0.7em;
+}
+
+.buttons {
+    gap: 1.2em;
+    margin-top: 2em;
+}
+
+.counter {
+    padding: 15px 10px;
+    border-radius: 10px;
+    background-color: hsl(223, 64%, 98%);
+    user-select: none;
+    justify-content: space-between;
+    align-items: center;
+    flex-grow: 1;
+    font-weight: 700;
+}
+
+
+.btn {
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    background-color: hsl(26, 100%, 55%);
+    padding: 15px 75px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.btn > .icon {
+    margin-right: 0.5em;
+}
+
+
+/* LIGHTBOX MODAL STYLES */
+
+.lightbox-modal {
+    display: none;
+}
+
+.lightbox-modal.open {
+    display: block;
+}
+
+.lightbox-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.75);
+}
+
+
+.lightbox-window {
+    width: 550px;
+    margin: 80px auto;
+    position: relative;
+}
+
+#preview_2 {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.lightbox-window > .thumbnails {
+    justify-content: space-evenly;
+}
+
+button[data-btn="prev"], button[data-btn="next"] {
+    position: absolute;
+    width: 50px;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    top: 40%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #fff;
+}
+
+button[data-btn="prev"] {
+    left: 0;
+    background-image: url('images/icon-previous.svg');
+}
+
+button[data-btn="next"] {
+    right: 0;
+    background-image: url('images/icon-next.svg');
+}
+
+.lightbox-window > button[data-btn="prev"] {
+    left: -25px;
+}
+.lightbox-window > button[data-btn="next"] {
+    right: -25px;
+}
+
+
+/* FOOTER STYLES */
+footer {
+    padding: 30px 0;
+}
+
+.attribution {
+    text-align: center;
+    line-height: 1.6;
+}

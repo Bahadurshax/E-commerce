@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- displays site properly based on user's device -->
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+    <title>Frontend Mentor | E-commerce product page</title>
+
+    <!-- Main CSS file -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- CSS media queries file -->
+    <link rel="stylesheet" href="media.css">
+
+    <!-- Google Fonts Kumbh Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <header id="caption">
+        <div class="container">
+            <nav id="primary_nav" class="d-flex" aria-label="Primary navigation">
+
+                <button class="menu-toggler"
+                        data-target="main_menu"
+                        aria-controls="main_menu"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation">
+                </button>
+                <!-- /.navbar-toggler -->
+
+                <a href="#" class="logo">
+                    <img src="images/logo.svg" alt="logo">
+                </a>
+                <!-- /.logo -->
+
+                <ul data-visible="false" class="menu-list d-flex" id="main_menu">
+                    <li class="menu-item"><a href="#collections">Collections</a></li>
+                    <li class="menu-item"><a href="#men">Men</a></li>
+                    <li class="menu-item"><a href="#women">Women</a></li>
+                    <li class="menu-item"><a href="#about">About</a></li>
+                    <li class="menu-item"><a href="#contact">Contact</a></li>
+                </ul>
+                <!-- /.menu-list -->
+                <div class="overlay"></div>
+
+                <div class="account d-flex">
+
+                    <button id="cart_btn">
+                        <img src="images/icon-cart.svg" alt="cart button icon">
+                        <span class="items-count"></span>
+                    </button>
+                    <!-- /#cart_btn -->
+
+                    <div class="cart">
+                        <h3 class="cart-title">Cart</h3>
+
+                        <div class="cart-content">
+                            <p>Your cart is empty</p>
+                        </div>
+                        <!-- .cart-content -->
+                    </div>
+                    <!-- /.cart -->
+                    <img src="images/image-avatar.png" class="profile-img" alt="profile image">
+                </div>
+                <!-- /.account -->
+            </nav>
+            <!-- /nav#menu -->
+        </div>
+        <!-- /.container -->
+    </header>
+    <!-- /header#caption -->
+
+    <main>
+        <section id="product_section" aria-label="Product section">
+            <div class="container">
+                <div class="product-block d-flex">
+
+                    <div class="product-preview">
+                        <!-- is only visible for desktop devices -->
+                        <img src="images/image-product-1.jpg" id="preview_1" alt="preview-img">
+
+                         <!-- is only visible for desktop devices -->
+                        <div class="thumbnails d-flex" data-target="preview_1">
+                            <button class="thumbnail-btn active" data-id="1">
+                                <img src="images/image-product-1-thumbnail.jpg" alt="thumbnail-img">
+                            </button>
+                            <button class="thumbnail-btn" data-id="2">
+                                <img src="images/image-product-2-thumbnail.jpg" alt="thumbnail-img">
+                            </button>
+                            <button class="thumbnail-btn" data-id="3">
+                                <img src="images/image-product-3-thumbnail.jpg" alt="thumbnail-img">
+                            </button>
+                            <button class="thumbnail-btn" data-id="4">
+                                <img src="images/image-product-4-thumbnail.jpg" alt="thumbnail-img">
+                            </button>
+                        </div>
+                        <!-- /.thumbnails -->
+
+                         <!-- will appear on mobile devices -->
+                        <div class="carousel">
+                            <div class="carousel-track">
+                                <img class="carousel-slide" src="images/image-product-1.jpg" alt="product image 1">
+                                <img class="carousel-slide" src="images/image-product-2.jpg" alt="product image 2">
+                                <img class="carousel-slide" src="images/image-product-3.jpg" alt="product image 3">
+                                <img class="carousel-slide" src="images/image-product-4.jpg" alt="product image 4">
+                            </div>
+                            <button data-btn="prev" aria-label="Previous slide"></button>
+                            <button data-btn="next" aria-label="Next slide"></button>
+                        </div>
+
+                    </div>
+                    <!-- /.product-preview -->
+    
+                    <div class="product-info">
+                        <span class="sup-title">Sneaker Company</span>
+                        <h1 class="title">Fall Limited Edition <br> Sneakers</h1>
+                        <p class="text">
+                            These low-profile sneakers are your perfect casual wear companion. Featuring a
+                            durable rubber outer sole, they’ll withstand everything the weather can offer.
+                        </p>
+                        <div class="prices d-flex">
+                            <div>
+                                <p class="price-text"><strong>$125.00</strong> <span class="discount-text">50%</span></p>
+                            </div>
+                            <div>
+                                <s>$250.00</s>
+                            </div>
+                        </div>
+                        
+                        <div class="buttons d-flex">
+                            <div class="counter d-flex">
+                                <button data-btn="decrement" aria-label="minus">
+                                    <img data-btn="decrement" src="images/icon-minus.svg" alt="minus icon">
+                                </button>
+                                <span id="num">0</span>
+                                <button data-btn="increment" aria-label="plus">
+                                    <img data-btn="increment" src="images/icon-plus.svg" alt="plus icon">
+                                </button>
+                            </div>
+                            <!-- /.counter -->
+    
+                            <button class="btn" id="add_btn">
+                                <svg class="icon" width="22" height="20" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z" fill="#fff" fill-rule="nonzero"/>
+                                </svg> 
+                                Add to cart
+                            </button>
+                        </div>
+                        <!-- /.buttons -->
+                    </div>
+                    <!-- /.product-info -->
+                </div>
+                <!-- /.product-block -->
+
+
+                <div class="lightbox-modal">
+                    <div class="lightbox-overlay">
+                        <div class="lightbox-window">
+
+                            <button data-btn="close" style="float: right; margin-bottom: 20px; transform: scale(1.5);">
+                                <img data-btn="close" src="images/icon-close.svg" alt="close button icon">
+                            </button>
+
+                            <button data-btn="prev" aria-label="Previous image"></button>
+                            <button data-btn="next" aria-label="Next image"></button>
+
+                            <img src="images/image-product-1.jpg" id="preview_2" alt="large-preview">
+                            
+                            <div class="thumbnails d-flex" data-target="preview_2">
+                                <button class="thumbnail-btn active" data-id="1">
+                                    <img src="images/image-product-1-thumbnail.jpg" alt="thumbnail-img">
+                                </button>
+                                <button class="thumbnail-btn" data-id="2">
+                                    <img src="images/image-product-2-thumbnail.jpg" alt="thumbnail-img">
+                                </button>
+                                <button class="thumbnail-btn" data-id="3">
+                                    <img src="images/image-product-3-thumbnail.jpg" alt="thumbnail-img">
+                                </button>
+                                <button class="thumbnail-btn" data-id="4">
+                                    <img src="images/image-product-4-thumbnail.jpg" alt="thumbnail-img">
+                                </button>
+                            </div>
+                            <!-- /.thumbnails -->
+                        </div>
+                        <!-- /.lightbox-window -->
+                    </div>
+                    <!-- /.lightbox-overlay -->
+                </div>
+                <!-- /.lightbox-modal -->
+            </div>
+            <!-- /.container -->
+        </section>
+    </main>
+
+
+    <footer>
+        <div class="attribution">
+            Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. <br>
+            Coded by <a href="#" target="_blank">Bahadur Arzimbetov</a>.
+        </div>
+    </footer>
+
+    <script src="preview.js"></script>
+    <script src="lightbox.js"></script>
+    <script src="cart.js"></script>
+    <script src="menu.js"></script>
+    <script src="mobile-carousel.js"></script>
+</body>
+
+</html>
